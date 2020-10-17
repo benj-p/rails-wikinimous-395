@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Article.destroy_all
+
+puts "Starting seed 🌱"
+
+100.times do |n|
+  puts "Creating article ##{n + 1}"
+  Article.create!(
+    title: Faker::Hipster.sentence,
+    content: Faker::Hipster.paragraph
+  )
+end
+
+puts "Finished seeding file 😀"
